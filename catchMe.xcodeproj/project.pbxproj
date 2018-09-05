@@ -12,6 +12,8 @@
 		23CD08792140315B00BFBF62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CD08772140315B00BFBF62 /* Main.storyboard */; };
 		23CD087B2140315D00BFBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CD087A2140315D00BFBF62 /* Assets.xcassets */; };
 		23CD087E2140315D00BFBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CD087C2140315D00BFBF62 /* LaunchScreen.storyboard */; };
+		23CD08882140477500BFBF62 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 23CD08872140477500BFBF62 /* Textures */; };
+		23CD088B2140494A00BFBF62 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CD088A2140494A00BFBF62 /* art.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		23CD087A2140315D00BFBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23CD087D2140315D00BFBF62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23CD087F2140315D00BFBF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23CD08872140477500BFBF62 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
+		23CD088A2140494A00BFBF62 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				23CD08732140315B00BFBF62 /* AppDelegate.swift */,
 				23CD08752140315B00BFBF62 /* ViewController.swift */,
+				23CD08872140477500BFBF62 /* Textures */,
 				23CD08772140315B00BFBF62 /* Main.storyboard */,
 				23CD087A2140315D00BFBF62 /* Assets.xcassets */,
 				23CD087C2140315D00BFBF62 /* LaunchScreen.storyboard */,
 				23CD087F2140315D00BFBF62 /* Info.plist */,
+				23CD088A2140494A00BFBF62 /* art.scnassets */,
 			);
 			path = catchMe;
 			sourceTree = "<group>";
@@ -124,6 +130,8 @@
 			files = (
 				23CD087E2140315D00BFBF62 /* LaunchScreen.storyboard in Resources */,
 				23CD087B2140315D00BFBF62 /* Assets.xcassets in Resources */,
+				23CD088B2140494A00BFBF62 /* art.scnassets in Resources */,
+				23CD08882140477500BFBF62 /* Textures in Resources */,
 				23CD08792140315B00BFBF62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
