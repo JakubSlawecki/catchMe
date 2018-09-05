@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,61 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="catchMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-JB-QIA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boG-BO-JOK">
+                                <rect key="frame" x="122.5" y="582" width="130" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ZoB-xw-51f"/>
+                                    <constraint firstAttribute="width" constant="130" id="qp5-bm-Chh"/>
+                                </constraints>
+                                <state key="normal" image="PlayBtn"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bH-fL-H2C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5f-7d-Xpq">
+                                <rect key="frame" x="318" y="615" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Jwc-ut-CSd"/>
+                                    <constraint firstAttribute="height" constant="42" id="igY-4a-G2o"/>
+                                </constraints>
+                                <state key="normal" image="resetBtn"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3O-1Z-SZM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="boG-BO-JOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CkV-2M-4XF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o5f-7d-Xpq" secondAttribute="trailing" constant="15" id="IoZ-I0-yeo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="boG-BO-JOK" secondAttribute="bottom" constant="50" id="L8d-2v-ZHi"/>
+                            <constraint firstItem="CkJ-JB-QIA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dV5-yZ-zFI"/>
+                            <constraint firstItem="CkJ-JB-QIA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="duN-KT-Brx"/>
+                            <constraint firstItem="CkJ-JB-QIA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lZC-mo-GSO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o5f-7d-Xpq" secondAttribute="bottom" constant="10" id="xzf-CI-NeI"/>
+                            <constraint firstItem="CkJ-JB-QIA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yZl-Vd-9d1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="CkJ-JB-QIA" id="KU8-wJ-fDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PlayBtn" width="271.20001220703125" height="72.720001220703125"/>
+        <image name="resetBtn" width="175.5" height="175.5"/>
+    </resources>
 </document>

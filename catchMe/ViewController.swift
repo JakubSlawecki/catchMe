@@ -7,14 +7,55 @@
 //
 
 import UIKit
+import ARKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var sceneView: ARSCNView!
+    let configuration = ARWorldTrackingConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        self.sceneView.session.run(configuration)
+        self.sceneView.autoenablesDefaultLighting = true
     }
-
+    
+    @IBAction func play(_ sender: Any) {
+        
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
