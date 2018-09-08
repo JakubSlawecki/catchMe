@@ -14,6 +14,7 @@
 		23CD087E2140315D00BFBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CD087C2140315D00BFBF62 /* LaunchScreen.storyboard */; };
 		23CD08882140477500BFBF62 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 23CD08872140477500BFBF62 /* Textures */; };
 		23CD088B2140494A00BFBF62 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CD088A2140494A00BFBF62 /* art.scnassets */; };
+		34D84CF09DF751319FD15624 /* Pods_catchMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60322D47E7080DB226EB244A /* Pods_catchMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		23CD087F2140315D00BFBF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23CD08872140477500BFBF62 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
 		23CD088A2140494A00BFBF62 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		60322D47E7080DB226EB244A /* Pods_catchMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_catchMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D013F060548D865CDC9005 /* Pods-catchMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-catchMe/Pods-catchMe.debug.xcconfig"; sourceTree = "<group>"; };
+		F7F13C7C5887780C182C7BD4 /* Pods-catchMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-catchMe/Pods-catchMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D84CF09DF751319FD15624 /* Pods_catchMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194B13C499CEC65EAD38C869 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84D013F060548D865CDC9005 /* Pods-catchMe.debug.xcconfig */,
+				F7F13C7C5887780C182C7BD4 /* Pods-catchMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		23CD08672140315B00BFBF62 = {
 			isa = PBXGroup;
 			children = (
 				23CD08722140315B00BFBF62 /* catchMe */,
 				23CD08712140315B00BFBF62 /* Products */,
+				194B13C499CEC65EAD38C869 /* Pods */,
+				8CB9C25D0A4F4CC133D97F08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +86,14 @@
 			path = catchMe;
 			sourceTree = "<group>";
 		};
+		8CB9C25D0A4F4CC133D97F08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60322D47E7080DB226EB244A /* Pods_catchMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23CD08822140315D00BFBF62 /* Build configuration list for PBXNativeTarget "catchMe" */;
 			buildPhases = (
+				0304EF4EDC650EB9A115929D /* [CP] Check Pods Manifest.lock */,
 				23CD086C2140315B00BFBF62 /* Sources */,
 				23CD086D2140315B00BFBF62 /* Frameworks */,
 				23CD086E2140315B00BFBF62 /* Resources */,
+				6D3E9D48506E0C45AFAF1F12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +163,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0304EF4EDC650EB9A115929D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-catchMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D3E9D48506E0C45AFAF1F12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-catchMe/Pods-catchMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Each/Each.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Each.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-catchMe/Pods-catchMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23CD086C2140315B00BFBF62 /* Sources */ = {
@@ -288,6 +361,7 @@
 		};
 		23CD08832140315D00BFBF62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D013F060548D865CDC9005 /* Pods-catchMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +380,7 @@
 		};
 		23CD08842140315D00BFBF62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7F13C7C5887780C182C7BD4 /* Pods-catchMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
