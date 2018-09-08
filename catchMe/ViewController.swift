@@ -33,15 +33,15 @@ class ViewController: UIViewController {
         self.setTimerCountdown()
         self.addNode()
         self.play.isEnabled = false
-        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            node.removeFromParentNode()
-        }
     }
     
     @IBAction func reset(_ sender: Any) {
         self.timer.stop()
         self.resetCountdown()
         self.play.isEnabled = true
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
     }
     
     func addNode() {
