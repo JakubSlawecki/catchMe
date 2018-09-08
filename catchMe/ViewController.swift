@@ -11,6 +11,7 @@ import ARKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var play: UIButton!
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func play(_ sender: Any) {
         self.addNode()
+        self.play.isEnabled = false
     }
     
     @IBAction func reset(_ sender: Any) {
@@ -48,11 +50,23 @@ class ViewController: UIViewController {
              print("sceneView tapped")
         } else {
             let result = hitTest.first!
-            let geometry = result.node.geometry
-            print(geometry)
+            let node = result.node
+            if node.animationKeys.isEmpty {
+                self.animateNode(node: node)
+            }
         }
        
         
+    }
+    
+    func animateNode(node: SCNNode) {
+        let vibrateNode = CABasicAnimation(keyPath: "position")
+        vibrateNode.fromValue = node.presentation.position
+        vibrateNode.toValue = SCNVector3(node.presentation.position.x - 0.015, node.presentation.position.y - 0.015, node.presentation.position.z + 0.015)
+        vibrateNode.duration = 0.02
+        vibrateNode.autoreverses = true
+        vibrateNode.repeatCount = 6
+        node.addAnimation(vibrateNode, forKey: "position")
     }
 
 }
